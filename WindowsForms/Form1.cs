@@ -22,7 +22,7 @@ namespace WindowsForms
         {
             Random random = new Random();
             int boxNumber = 9;
-            while (emptyBox[boxNumber] == false && Array.IndexOf(emptyBox, true) >= 0)
+            while (emptyBox[boxNumber] > 1 && emptyBox[9] < 10)
             {
                 boxNumber = random.Next(0, 8);
             }
@@ -31,46 +31,56 @@ namespace WindowsForms
             {
                 case (0):
                     pictureBox1.Image = Image.FromFile(oPath);
-                    emptyBox[boxNumber] = false;
+                    emptyBox[boxNumber] = 3;
+                    emptyBox[9]++;
                     break;
                 case (1):
                     pictureBox2.Image = Image.FromFile(oPath);
-                    emptyBox[boxNumber] = false;
+                    emptyBox[boxNumber] = 3;
+                    emptyBox[9]++;
                     break;
                 case (2):
                     pictureBox3.Image = Image.FromFile(oPath);
-                    emptyBox[boxNumber] = false;
+                    emptyBox[boxNumber] = 3;
+                    emptyBox[9]++;
                     break;
                 case (3):
                     pictureBox4.Image = Image.FromFile(oPath);
-                    emptyBox[boxNumber] = false;
+                    emptyBox[boxNumber] = 3;
+                    emptyBox[9]++;
                     break;
                 case (4):
                     pictureBox5.Image = Image.FromFile(oPath);
-                    emptyBox[boxNumber] = false;
+                    emptyBox[boxNumber] = 3;
+                    emptyBox[9]++;
                     break;
                 case (5):
                     pictureBox6.Image = Image.FromFile(oPath);
-                    emptyBox[boxNumber] = false;
+                    emptyBox[boxNumber] = 3;
+                    emptyBox[9]++;
                     break;
                 case (6):
                     pictureBox7.Image = Image.FromFile(oPath);
-                    emptyBox[boxNumber] = false;
+                    emptyBox[boxNumber] = 3;
+                    emptyBox[9]++;
                     break;
                 case (7):
                     pictureBox8.Image = Image.FromFile(oPath);
-                    emptyBox[boxNumber] = false;
+                    emptyBox[boxNumber] = 3;
+                    emptyBox[9]++;
                     break;
                 case (8):
                     pictureBox9.Image = Image.FromFile(oPath);
-                    emptyBox[boxNumber] = false;
+                    emptyBox[boxNumber] = 3;
+                    emptyBox[9]++;
                     break;
                 default:
                     break;
             }
         }
 
-        public static bool[] emptyBox = new bool[10] { true, true, true, true, true, true, true, true, true, false };
+        public static short[] emptyBox = new short[10] { 1, 1, 1, 1, 1, 1, 1, 1, 1, 2 };
+        // 1 - true, 2 - crosses, 3 - naughts, last number is for turn counter
         public static string oPath = Path.Combine(System.IO.Directory.GetCurrentDirectory(), "O.png");
         public static string xPath = Path.Combine(System.IO.Directory.GetCurrentDirectory(), "X.png");
         //public static string oPath = ("http://cs616625.vk.me/v616625282/aff5/NQHFmJ6HgCc.jpg");
@@ -95,90 +105,99 @@ namespace WindowsForms
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            if (emptyBox[0] == true)
+            if (emptyBox[0] == 1)
             {
                 pictureBox1.Image = Image.FromFile(xPath);
-                emptyBox[0] = false;
+                emptyBox[0] = 2;
+                emptyBox[9]++;
                 AITrun();
             }
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            if (emptyBox[1] == true)
+            if (emptyBox[1] == 1)
             {
                 pictureBox2.Image = Image.FromFile(xPath);
-                emptyBox[1] = false;
+                emptyBox[1] = 2;
+                emptyBox[9]++;
                 AITrun();
             }
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            if (emptyBox[2] == true)
+            if (emptyBox[2] == 1)
             {
                 pictureBox3.Image = Image.FromFile(xPath);
-                emptyBox[2] = false;
+                emptyBox[2] = 2;
+                emptyBox[9]++;
                 AITrun();
             }
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-            if (emptyBox[3] == true)
+            if (emptyBox[3] == 1)
             {
                 pictureBox4.Image = Image.FromFile(xPath);
-                emptyBox[3] = false;
+                emptyBox[3] = 2;
+                emptyBox[9]++;
                 AITrun();
             }
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
-            if (emptyBox[4] == true)
+            if (emptyBox[4] == 1)
             {
                 pictureBox5.Image = Image.FromFile(xPath);
-                emptyBox[4] = false;
+                emptyBox[4] = 2;
+                emptyBox[9]++;
                 AITrun();
             }
         }
 
         private void pictureBox6_Click(object sender, EventArgs e)
         {
-            if (emptyBox[5] == true)
+            if (emptyBox[5] == 1)
             {
                 pictureBox6.Image = Image.FromFile(xPath);
-                emptyBox[5] = false;
+                emptyBox[5] = 2;
+                emptyBox[9]++;
                 AITrun();
             }
         }
 
         private void pictureBox7_Click(object sender, EventArgs e)
         {
-            if (emptyBox[6] == true)
+            if (emptyBox[6] == 1)
             {
                 pictureBox7.Image = Image.FromFile(xPath);
-                emptyBox[6] = false;
+                emptyBox[6] = 2;
+                emptyBox[9]++;
                 AITrun();
             }
         }
 
         private void pictureBox8_Click(object sender, EventArgs e)
         {
-            if (emptyBox[7] == true)
+            if (emptyBox[7] == 1)
             {
                 pictureBox8.Image = Image.FromFile(xPath);
-                emptyBox[7] = false;
+                emptyBox[7] = 2;
+                emptyBox[9]++;
                 AITrun();
             }
         }
 
         private void pictureBox9_Click(object sender, EventArgs e)
         {
-            if (emptyBox[8] == true)
+            if (emptyBox[8] == 1)
             {
                 pictureBox9.Image = Image.FromFile(xPath);
-                emptyBox[8] = false;
+                emptyBox[8] = 2;
+                emptyBox[9]++;
                 AITrun();
             }
         }
