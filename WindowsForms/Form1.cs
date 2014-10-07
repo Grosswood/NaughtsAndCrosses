@@ -20,7 +20,6 @@ namespace WindowsForms
 
         public void AITurn()
         {
-            Random random = new Random();
             int boxNumber = 0;
             if (emptyBox[5] == 1)
             {
@@ -28,11 +27,12 @@ namespace WindowsForms
             }
             else
             {
-                while (emptyBox[boxNumber] > 1 && emptyBox[0] < 10)
+                /*while (emptyBox[boxNumber] > 1 && emptyBox[0] < 10)
                 {
-                    boxNumber = random.Next(1, 9);
-                }
-
+                   Random random = new Random(); 
+                 * boxNumber = random.Next(1, 9);
+                }*/
+                boxNumber = almostWin(3);
             }
 
             switch (boxNumber)
@@ -121,19 +121,22 @@ namespace WindowsForms
                     {
                         if (position != positionToExclude)
                         {
-                            total = total + emptyBox[winningLane[combination, position]];
+                            if (emptyBox[winningLane[combination, position]] == player)
+                            {
+                                total = total + emptyBox[winningLane[combination, position]];
+                            }
                         }
-                        total = total + player;
-                        if (total == 6 || total ==9)
+                        if (total == (player*2))
                         {
-                            return combination;
-                            //emptyBox empty value is need to be "0" instead of "1" beceuae of 1+2+3 case
+                            return winningLane[combination, positionToExclude];
                         }
                         total = 0;
                     }
                 }
             }
-            return 10;
+            //Random random = new Random();
+            //return (random.Next(1, 9));
+            return 1;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
