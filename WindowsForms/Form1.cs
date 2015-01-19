@@ -27,58 +27,58 @@ namespace WindowsForms
             }
             else
             {
-                /*while (emptyBox[boxNumber] > 1 && emptyBox[0] < 10)
+                while (emptyBox[boxNumber] > 1 && emptyBox[0] < 10)
                 {
                    Random random = new Random(); 
-                 * boxNumber = random.Next(1, 9);
-                }*/
-                boxNumber = almostWin(3);
+                   boxNumber = random.Next(1, 9);
+                }
+                //boxNumber = almostWin(3);
             }
 
             switch (boxNumber)
             {
                 case (1):
-                    pictureBox1.Image = Image.FromFile(oPath);
+                    pictureBox1.Image = WindowsForms.Properties.Resources.O;
                     emptyBox[boxNumber] = 3;
                     emptyBox[0]++;
                     break;
                 case (2):
-                    pictureBox2.Image = Image.FromFile(oPath);
+                    pictureBox2.Image = WindowsForms.Properties.Resources.O;
                     emptyBox[boxNumber] = 3;
                     emptyBox[0]++;
                     break;
                 case (3):
-                    pictureBox3.Image = Image.FromFile(oPath);
+                    pictureBox3.Image = WindowsForms.Properties.Resources.O;
                     emptyBox[boxNumber] = 3;
                     emptyBox[0]++;
                     break;
                 case (4):
-                    pictureBox4.Image = Image.FromFile(oPath);
+                    pictureBox4.Image = WindowsForms.Properties.Resources.O;
                     emptyBox[boxNumber] = 3;
                     emptyBox[0]++;
                     break;
                 case (5):
-                    pictureBox5.Image = Image.FromFile(oPath);
+                    pictureBox5.Image = WindowsForms.Properties.Resources.O;
                     emptyBox[boxNumber] = 3;
                     emptyBox[0]++;
                     break;
                 case (6):
-                    pictureBox6.Image = Image.FromFile(oPath);
+                    pictureBox6.Image = WindowsForms.Properties.Resources.O;
                     emptyBox[boxNumber] = 3;
                     emptyBox[0]++;
                     break;
                 case (7):
-                    pictureBox7.Image = Image.FromFile(oPath);
+                    pictureBox7.Image = WindowsForms.Properties.Resources.O;
                     emptyBox[boxNumber] = 3;
                     emptyBox[0]++;
                     break;
                 case (8):
-                    pictureBox8.Image = Image.FromFile(oPath);
+                    pictureBox8.Image = WindowsForms.Properties.Resources.O;
                     emptyBox[boxNumber] = 3;
                     emptyBox[0]++;
                     break;
                 case (9):
-                    pictureBox9.Image = Image.FromFile(oPath);
+                    pictureBox9.Image = WindowsForms.Properties.Resources.O;
                     emptyBox[boxNumber] = 3;
                     emptyBox[0]++;
                     break;
@@ -87,27 +87,22 @@ namespace WindowsForms
             }
         }
 
-        public static int[] emptyBox = new int[10] { 2, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
+        public static int[] emptyBox = new int[] { 2, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
         // 1 - true, 2 - crosses, 3 - naughts, first number is for turn counter
-        public static int[,] winningLane = new int[,] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 }, { 1, 4, 6 }, { 2, 5, 7 }, { 3, 6, 9 }, { 1, 5, 8 }, { 3, 5, 6 } };
-        public static string oPath = Path.Combine(System.IO.Directory.GetCurrentDirectory(), "O.png");
-        public static string xPath = Path.Combine(System.IO.Directory.GetCurrentDirectory(), "X.png");
+        public static int[,] winningLane = new int[,] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 }, { 1, 4, 6 }, { 2, 5, 7 }, { 3, 6, 9 }, { 1, 5, 8 }, { 3, 5, 7 } };
+        
+        //public string oPath = "C:/Миха/Windows-Forms/WindowsForms/Resources/O.png";
+        //public string xPath = "C:/Миха/Windows-Forms/WindowsForms/Resources/X.png";
+        
+        //public static string oPath = Path.Combine(System.IO.Directory.GetCurrentDirectory(), "Resources/O.png");
+        //public static string xPath = Path.Combine(System.IO.Directory.GetCurrentDirectory(), "Resources/X.png");
         //public static string oPath = ("http://cs616625.vk.me/v616625282/aff5/NQHFmJ6HgCc.jpg");
         //public static string xPath = ("http://cs616625.vk.me/v616625282/afee/Al_jAAGmWjI.jpg");
 
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //string path = System.IO.Directory.GetCurrentDirectory();
-            //var oPath = Path.Combine(System.IO.Directory.GetCurrentDirectory(), "O.png");
-            //var xPath = Path.Combine(System.IO.Directory.GetCurrentDirectory(), "X.png");
 
-
-            /*pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
-            Image image = Image.FromFile("C:/Users/Алина/Downloads/O.png");
-            pictureBox1.Image = image;
-            pictureBox1.Height = image.Height;
-            pictureBox1.Width = image.Width;*/
         }
 
         public int almostWin(int player) //2 - crosses, 3 - naughts
@@ -143,7 +138,7 @@ namespace WindowsForms
         {
             if (emptyBox[1] == 1)
             {
-                pictureBox1.Image = Image.FromFile(xPath);
+                pictureBox1.Image = WindowsForms.Properties.Resources.X;
                 emptyBox[1] = 2;
                 emptyBox[0]++;
                 AITurn();
@@ -154,7 +149,7 @@ namespace WindowsForms
         {
             if (emptyBox[2] == 1)
             {
-                pictureBox2.Image = Image.FromFile(xPath);
+                pictureBox2.Image = WindowsForms.Properties.Resources.X;
                 emptyBox[2] = 2;
                 emptyBox[0]++;
                 AITurn();
@@ -165,7 +160,7 @@ namespace WindowsForms
         {
             if (emptyBox[3] == 1)
             {
-                pictureBox3.Image = Image.FromFile(xPath);
+                pictureBox3.Image = WindowsForms.Properties.Resources.X;
                 emptyBox[3] = 2;
                 emptyBox[0]++;
                 AITurn();
@@ -176,7 +171,7 @@ namespace WindowsForms
         {
             if (emptyBox[4] == 1)
             {
-                pictureBox4.Image = Image.FromFile(xPath);
+                pictureBox4.Image = WindowsForms.Properties.Resources.X;
                 emptyBox[4] = 2;
                 emptyBox[0]++;
                 AITurn();
@@ -187,7 +182,7 @@ namespace WindowsForms
         {
             if (emptyBox[5] == 1)
             {
-                pictureBox5.Image = Image.FromFile(xPath);
+                pictureBox5.Image = WindowsForms.Properties.Resources.X;
                 emptyBox[5] = 2;
                 emptyBox[0]++;
                 AITurn();
@@ -198,7 +193,7 @@ namespace WindowsForms
         {
             if (emptyBox[6] == 1)
             {
-                pictureBox6.Image = Image.FromFile(xPath);
+                pictureBox6.Image = WindowsForms.Properties.Resources.X;
                 emptyBox[6] = 2;
                 emptyBox[0]++;
                 AITurn();
@@ -209,7 +204,7 @@ namespace WindowsForms
         {
             if (emptyBox[7] == 1)
             {
-                pictureBox7.Image = Image.FromFile(xPath);
+                pictureBox7.Image = WindowsForms.Properties.Resources.X;
                 emptyBox[7] = 2;
                 emptyBox[0]++;
                 AITurn();
@@ -220,7 +215,7 @@ namespace WindowsForms
         {
             if (emptyBox[8] == 1)
             {
-                pictureBox8.Image = Image.FromFile(xPath);
+                pictureBox8.Image = WindowsForms.Properties.Resources.X;
                 emptyBox[8] = 2;
                 emptyBox[0]++;
                 AITurn();
@@ -231,7 +226,7 @@ namespace WindowsForms
         {
             if (emptyBox[9] == 1)
             {
-                pictureBox9.Image = Image.FromFile(xPath);
+                pictureBox9.Image = WindowsForms.Properties.Resources.X;
                 emptyBox[9] = 2;
                 emptyBox[0]++;
                 AITurn();
